@@ -1,0 +1,6 @@
+We implemented a complementary filter that combined position data from both the accelerometer and the gyroscope. The complementary filter
+takes the low pass data from the accelerometer to accommodate for noise and the high pass data from the gyro to account for drift. In addition 
+to the implemented complementary filter that was utilized in software, we made use of the on board low pass filter for the accelerometer. This greatly
+helped with reducing noise off that sensor and giving cleaner position updates. The low pass filter of the imu sets the cutoff frequency based off the
+sampling rate. The sampling rate or ODR (no decimation) is set to 952 and the cutoff frequency is set to 952/50 ~= 20 Hz. This is controlled by setting the
+registers in the IMU library.
